@@ -1,0 +1,28 @@
+{
+  "name": "koa-router-validator",
+  "description": "Validator middleware for [koa-router](https://github.com/alexmingoia/koa-router).",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha --harmony test"
+  },
+  "keywords": [
+    "koa",
+    "middleware",
+    "validator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nswbmw/koa-router-validator"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "koa": "^1.1.2",
+    "koa-bodyparser": "^2.0.1",
+    "koa-router": "^5.2.3",
+    "supertest": "^1.1.0"
+  },
+  "dependencies": {
+    "merge-descriptors": "^1.0.0",
+    "validator-it": "^1.1.0"
+  }
+}
