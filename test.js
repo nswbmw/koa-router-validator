@@ -12,14 +12,16 @@ app.use(bodyparser());
 app.use(router.routes());
 
 router.post('/', validator({
-  body: {
-    user: function checkUser(user) {
-      if (!user) {
-        throw new Error('No user'); // this.throw(400, new Error('No user'))
+  request: {
+    body: {
+      user: function checkUser(user) {
+        if (!user) {
+          throw new Error('No user'); // this.throw(400, new Error('No user'))
+        }
       }
     }
   },
-  'body.age': validator.isNumeric()
+  'request.body.age': validator.isNumeric()
 }), function *() {
   this.body = 'Hello, world';
 });
@@ -36,14 +38,14 @@ describe('koa-router-validator', function () {
       });
   });
 
-  it('should throw `[body.age: undefined] ✖ isNumeric`', function (done) {
+  it('should throw `[request.body.age: undefined] ✖ isNumeric`', function (done) {
     request(app.callback())
       .post('/')
       .send({ user: 'nswbmw' })
       .expect(400)
       .end(function (err, res) {
         if (err) return done(err);
-        assert.equal(res.text, '[body.age: undefined] ✖ isNumeric');
+        assert.equal(res.text, '[request.body.age: undefined] ✖ isNumeric');
         done();
       });
   });
