@@ -2,11 +2,6 @@
 
 Validator middleware for [koa-router](https://github.com/alexmingoia/koa-router).
 
-**Notes:**
-
-- koa@1 -> koa-router-validator@1
-- koa@2 -> koa-router-validator@2 (not yet)
-
 ### Install
 
 ```
