@@ -9,7 +9,7 @@ module.exports = function (schemas) {
     try {
       validatorFactory.call(this, this, true);
     } catch (e) {
-      this.throw(e.status || e.statusCode || 400, e.message);
+      this.throw(e.status || e.statusCode || 400, e);
     }
     yield next;
   };
